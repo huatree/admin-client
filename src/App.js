@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+/* 应用页面入口 */
 
+/* 调用模块
+---------------------------------------------------------------- */
+import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+
+/* 路由模块
+---------------------------------------------------------------- */
+import Login from './pages/login'
+import AdminLayout from './layout'
+import ErrorPage from './pages/404'
+
+/* 唯一的模块导出
+---------------------------------------------------------------- */
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Switch>
+        <Route path='/login' component={Login} />
+        <Route path='/' component={AdminLayout} />
+        <Route path='/404' component={ErrorPage} />
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
