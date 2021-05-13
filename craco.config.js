@@ -1,13 +1,23 @@
+const { resolve } = require('path')
 const CracoLessPlugin = require('craco-less')
 
 module.exports = {
+  webpack: {
+    alias: {
+      '@': resolve('src'),
+      components: resolve('src/components'),
+      assets: resolve('src/assets'),
+      api: resolve('src/api'),
+      utils: resolve('src/utils')
+    }
+  },
   plugins: [
     {
       plugin: CracoLessPlugin,
       options: {
         lessLoaderOptions: {
           lessOptions: {
-            modifyVars: { '@primary-color': '#f40' },
+            modifyVars: { '@primary-color': '#1DA57A', '@border-radius-base': '4px' },
             javascriptEnabled: true
           }
         }
@@ -26,14 +36,17 @@ module.exports = {
         }
       ]
     ]
+  },
+  devServer: {
+    proxy: {
+      '/v1': {
+        target: 'http://39.100.225.255:5000',
+        changeOrigin: true,
+        ws: true,
+        pathRewrite: {
+          '^/v1': ''
+        }
+      }
+    }
   }
-  // devServer: {
-  //   proxy: {
-  //     '/v1': {
-  //       target: '',
-  //       changeOrigin: true,
-  //       ws: true
-  //     }
-  //   }
-  // }
 }
