@@ -4,23 +4,23 @@ const menuList = [
   {
     title: '首页', // 菜单标题名称
     key: '/home', // 对应的path
-    icon: 'home', // 图标名称
+    icon: 'icon-home', // 图标名称
     isPublic: true, // 公开的
   },
   {
     title: '商品',
     key: '/products',
-    icon: 'appstore',
+    icon: 'icon-modular',
     children: [ // 子菜单列表
       {
         title: '品类管理',
         key: '/category',
-        icon: 'bars'
+        icon: 'icon-menu'
       },
       {
         title: '商品管理',
         key: '/product',
-        icon: 'tool'
+        icon: 'icon-setting'
       },
     ]
   },
@@ -28,42 +28,36 @@ const menuList = [
   {
     title: '用户管理',
     key: '/user',
-    icon: 'user'
+    icon: 'icon-user'
   },
   {
     title: '角色管理',
     key: '/role',
-    icon: 'safety',
+    icon: 'icon-security',
   },
 
   {
     title: '图形图表',
     key: '/charts',
-    icon: 'area-chart',
+    icon: 'icon-chart-area',
     children: [
       {
         title: '柱形图',
         key: '/charts/bar',
-        icon: 'bar-chart'
+        icon: 'icon-chart-bar'
       },
       {
         title: '折线图',
         key: '/charts/line',
-        icon: 'line-chart'
+        icon: 'icon-chart-line'
       },
       {
         title: '饼图',
         key: '/charts/pie',
-        icon: 'pie-chart'
+        icon: 'icon-chart-pie'
       },
     ]
-  },
-
-  {
-    title: '订单管理',
-    key: '/order',
-    icon: 'windows',
-  },
+  }
 ]
 
 export default menuList
