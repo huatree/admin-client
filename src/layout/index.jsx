@@ -2,9 +2,9 @@
 
 /* 调用模块
 ---------------------------------------------------------------- */
-import React, { Suspense } from 'react'
+import React from 'react'
 import { Redirect, Switch, Route } from 'react-router-dom'
-import { Layout, Spin } from 'antd'
+import { Layout } from 'antd'
 
 /* 公共组件
 ---------------------------------------------------------------- */
@@ -55,24 +55,20 @@ function AdminLayout() {
         <Sider style={{ background: '#fff', width: 200, height: '100%' }}>
           <LeftNav />
         </Sider>
-        <Layout>
-          <Content style={{ paddingLeft: 16, height: '100%', overflow: 'hidden', overflowY: 'auto' }}>
-            <Suspense fallback={<Spin />}>
-              <Switch>
-                <Redirect from='/' exact to='/home' />
-                <Route path='/home' component={Home} />
-                <Route path='/category' component={Category} />
-                <Route path='/product' component={Product} />
-                <Route path='/user' component={User} />
-                <Route path='/role' component={Role} />
-                <Route path='/charts/bar' component={Bar} />
-                <Route path='/charts/pie' component={Pie} />
-                <Route path='/charts/line' component={Line} />
-                <Route component={ErrorPage} />
-              </Switch>
-            </Suspense>
-          </Content>
-        </Layout>
+        <Content>
+          <Switch>
+            <Redirect from='/' exact to='/home' />
+            <Route path='/home' component={Home} />
+            <Route path='/category' component={Category} />
+            <Route path='/product' component={Product} />
+            <Route path='/user' component={User} />
+            <Route path='/role' component={Role} />
+            <Route path='/charts/bar' component={Bar} />
+            <Route path='/charts/pie' component={Pie} />
+            <Route path='/charts/line' component={Line} />
+            <Route component={ErrorPage} />
+          </Switch>
+        </Content>
       </Layout>
     </Layout>
   )
