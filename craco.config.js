@@ -8,7 +8,8 @@ module.exports = {
       components: resolve('src/components'),
       assets: resolve('src/assets'),
       api: resolve('src/api'),
-      utils: resolve('src/utils')
+      utils: resolve('src/utils'),
+      pages: resolve('src/pages')
     }
   },
   plugins: [
@@ -17,7 +18,7 @@ module.exports = {
       options: {
         lessLoaderOptions: {
           lessOptions: {
-            modifyVars: { '@primary-color': '#1DA57A', '@border-radius-base': '4px' },
+            modifyVars: { '@primary-color': '#1951be', '@border-radius-base': '4px' },
             javascriptEnabled: true
           }
         }

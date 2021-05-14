@@ -7,9 +7,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 /* 路由模块
 ---------------------------------------------------------------- */
-import Login from './pages/login'
+import Login from 'pages/login'
 import AdminLayout from './layout'
-import ErrorPage from './pages/404'
+import ErrorPage from 'pages/404'
 
 /* 唯一的模块导出
 ---------------------------------------------------------------- */
