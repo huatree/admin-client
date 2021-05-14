@@ -4,6 +4,7 @@
 ---------------------------------------------------------------- */
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { ConfigProvider } from 'antd'
 
 /* 路由模块
 ---------------------------------------------------------------- */
@@ -15,13 +16,15 @@ import ErrorPage from 'pages/404'
 ---------------------------------------------------------------- */
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path='/login' component={Login} />
-        <Route path='/' component={AdminLayout} />
-        <Route path='/404' component={ErrorPage} />
-      </Switch>
-    </BrowserRouter>
+    <ConfigProvider componentSize={'small'}>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/login' component={Login} />
+          <Route path='/' component={AdminLayout} />
+          <Route path='/404' component={ErrorPage} />
+        </Switch>
+      </BrowserRouter>
+    </ConfigProvider>
   )
 }
 
