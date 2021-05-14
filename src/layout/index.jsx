@@ -55,7 +55,7 @@ function AdminLayout() {
         <Sider style={{ background: '#fff', width: 200, height: '100%' }}>
           <LeftNav />
         </Sider>
-        <Content>
+        <Content style={{ height: ' 100%', overflow: 'hidden', overflowY: 'auto' }}>
           <Switch>
             <Redirect from='/' exact to='/home' />
             <Route path='/home' component={Home} />
