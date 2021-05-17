@@ -5,6 +5,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { ConfigProvider } from 'antd'
+import zhCN from 'antd/lib/locale/zh_CN';
 
 /* 路由模块
 ---------------------------------------------------------------- */
@@ -16,7 +17,10 @@ import ErrorPage from 'pages/404'
 ---------------------------------------------------------------- */
 function App() {
   return (
-    <ConfigProvider componentSize={'small'}>
+    <ConfigProvider 
+      locale={zhCN}
+      // componentSize={'small'}
+    >
       <BrowserRouter>
         <Switch>
           <Route path='/login' component={Login} />
