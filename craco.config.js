@@ -9,7 +9,8 @@ module.exports = {
       assets: resolve('src/assets'),
       api: resolve('src/api'),
       utils: resolve('src/utils'),
-      pages: resolve('src/pages')
+      pages: resolve('src/pages'),
+      config: resolve('src/config')
     }
   },
   plugins: [
