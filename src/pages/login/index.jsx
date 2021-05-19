@@ -59,7 +59,7 @@ function Login(props) {
               { pattern: /^[a-zA-Z0-9_]+$/, message: '用户名必须是英文、数字或下划线组成' }
             ]}
           >
-            <Input placeholder='用户名' prefix={<UserOutlined style={{ color: 'rgba(0,0,0,.25)' }} />} />
+            <Input placeholder='用户名["管理员：system", "普通：test124"]' prefix={<UserOutlined style={{ color: 'rgba(0,0,0,.25)' }} />} />
           </Item>
           <Item
             name='password'
@@ -71,7 +71,7 @@ function Login(props) {
             ]}
           >
             <Input.Password
-              placeholder='密码'
+              placeholder='密码[123456]'
               prefix={<LockOutlined style={{ color: 'rgba(0,0,0,.25)' }} />}
               autoComplete='none'
             />
