@@ -2,31 +2,27 @@
 
 /* 调用模块
 ---------------------------------------------------------------- */
-import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import React  from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import { ConfigProvider } from 'antd'
-import zhCN from 'antd/lib/locale/zh_CN';
+import zhCN from 'antd/lib/locale/zh_CN'
 
 /* 路由模块
 ---------------------------------------------------------------- */
-import Login from 'pages/login'
-import AdminLayout from './layout'
-import ErrorPage from 'pages/404'
+import renderRoutes from './router'
+import routes from 'config/routes'
+
 
 /* 唯一的模块导出
 ---------------------------------------------------------------- */
 function App() {
   return (
-    <ConfigProvider 
+    <ConfigProvider
       locale={zhCN}
       // componentSize={'small'}
     >
       <BrowserRouter>
-        <Switch>
-          <Route path='/login' component={Login} />
-          <Route path='/' component={AdminLayout} />
-          <Route path='/404' component={ErrorPage} />
-        </Switch>
+        {renderRoutes(routes)}
       </BrowserRouter>
     </ConfigProvider>
   )
