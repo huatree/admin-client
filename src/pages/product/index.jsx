@@ -129,7 +129,7 @@ function Product(props) {
    * @param {*} form
    * @param {*} values
    */
-  const onAddOrUpdateProduct = async (values) => {
+  const onAddOrUpdateProduct = async values => {
     const { type, data } = action
     let res = {}
     switch (type) {
@@ -161,6 +161,7 @@ function Product(props) {
   }
 
   useEffect(() => {
+    // getProducts({[search.type]: search.name, ...page})
     getProducts(page)
 
     return () => {
@@ -203,7 +204,10 @@ function Product(props) {
           />
           <Button
             type='primary'
-            onClick={() => getProducts({ pageNum: 1, pageSize: PAGE_SIZE, [search.type]: search.name })}
+            onClick={() => {
+              getProducts({ pageNum: 1, pageSize: PAGE_SIZE, [search.type]: search.name })
+              setPage({ pageNum: 1, pageSize: PAGE_SIZE })
+            }}
           >
             查询
           </Button>
@@ -241,7 +245,11 @@ function Product(props) {
   }
 
   return (
-    <ProductForm action={action} onClose={() => setAction({ ...action, type: '' })} onAddOrUpdate={onAddOrUpdateProduct} />
+    <ProductForm
+      action={action}
+      onClose={() => setAction({ ...action, type: '' })}
+      onAddOrUpdate={onAddOrUpdateProduct}
+    />
   )
 }
 
