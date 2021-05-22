@@ -35,6 +35,7 @@
 +-- public
 |   --- index.html     首页入口html文
 |   --- ...
++-- src
 |   +-- api            http请求存放目录
 |   |   --- ajax.js    axios封装  
 |   |   --- index.js   api请求配置
